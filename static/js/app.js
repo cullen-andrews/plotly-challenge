@@ -75,7 +75,7 @@ function demographics(input){
         // d3 connection to the demographics panel
         var metadata = d3.select('#sample-metadata');
 
-
+        // Still under construction at submission time.
 
     })
 }  
