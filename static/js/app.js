@@ -8,6 +8,7 @@ function bar(input) {
         var samples = data.samples;
         var metadata = data.metadata;
 
+        // Filter based on dropdown selection
         var inputDataArray = samples.filter(item => item.id == input);
         
         var trace1 = {
@@ -33,6 +34,7 @@ function bubble(input){
         var samples = data.samples;
         var metadata = data.metadata;
 
+         // Filter based on dropdown selection
         var inputDataArray = samples.filter(item => item.id == input);
         
         // How to design trace2 for bubble chart is at https://plotly.com/javascript/bubble-charts/
@@ -61,7 +63,22 @@ function bubble(input){
 };
 
 // Build the demographics panel
-function demographics(){}  // Time budget exhausted for this one.
+function demographics(input){
+    dataSet.then(data => {
+        var names = data.names;
+        var samples = data.samples;
+        var metadata = data.metadata;
+
+         // Filter based on dropdown selection
+         var inputDataArray = samples.filter(item => item.id == input);
+
+        // d3 connection to the demographics panel
+        var metadata = d3.select('#sample-metadata');
+
+
+
+    })
+}  
 
 function optionChanged(option) {
     // Build the charts and demographics panel a newly selected dropdown option
